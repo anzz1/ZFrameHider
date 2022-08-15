@@ -2,7 +2,7 @@
 ## Title: ZFrameHider
 ## Author: kebabstorm
 ## Notes: Hide Frames
-## Version: 1.0.0
+## Version: 1.0.1
 ## SavedVariables: ZFH_G, ZFH_Silent
 ## SavedVariablesPerCharacter: ZFH_C
 ZFrameHider.lua

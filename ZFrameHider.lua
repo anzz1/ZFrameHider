@@ -96,7 +96,15 @@ SlashCmdList["ZFRAMEHIDER"] = function (msg)
                 if (string.sub(msg[3], 1, 1) == "#") then
                     i = tonumber(string.sub(msg[3], 2))
                 else
-                    i = tonumber(msg[3]) or tContains(global and ZFH_G or ZFH_C, msg[3])
+                    i = tonumber(msg[3])
+                end
+                if (not i) then
+                    for x,v in ipairs(global and ZFH_G or ZFH_C) do
+                        if (v == msg[3]) then
+                            i = x
+                            break
+                        end
+                    end
                 end
                 if (i and i <= (global and #ZFH_G or #ZFH_C)) then
                     DEFAULT_CHAT_FRAME:AddMessage("|c00bfffffZFrameHider|r: Removed \"|c00bfffff" .. (global and ZFH_G[i] or ZFH_C[i]) .. "|r\" from frame hide list " .. (global and "(global)" or "(character)"), 0.0, .8, 1)
